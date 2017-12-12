@@ -30,6 +30,8 @@
     <Compile Include="Ship.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Point.cs" />
+    <Compile Include="Grid.cs" />
+    <Compile Include="Player.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
