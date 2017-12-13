@@ -9,12 +9,12 @@ namespace Battleship
         public int Hits { get; set; } = 0;
         public Boolean Sunk { get; set; } = false;
         public String Name { get; set; }
-        public String[] Coords;
+        public Point[] Coords;
 
         public Ship(String _name, int size) {
             Name = _name;
             _size = size;
-			Coords = new String[size];
+            Coords = new Point[size];
         }
     }
 }

@@ -33,12 +33,52 @@ namespace Battleship
             //}
         }
 
-        public void SetShip(String _shipName, String[] _coords) 
+
+
+        public void SetShip(String _shipName, Point[] _coords) 
         {
             for (int i = 0; i < _coords.Length; i++) {
 				Fleet[_shipName].Coords[i] = _coords[i];
-				Console.WriteLine(Fleet[_shipName].Coords[i]);
+                PlayerGrid.GridLocations[_coords[i].Location].Occupier = Fleet[_shipName];
+				//Console.WriteLine(Fleet[_shipName].Coords[i]);
             }
+            /* View Ship Placement */
+            //foreach (KeyValuePair<string, Point> kvp in PlayerGrid.GridLocations)
+            //{
+            //    if (kvp.Value.Occupier != null)
+            //    {
+            //        Console.WriteLine($"Occupier:  {kvp.Value.Occupier.Name}", kvp.Value.Occupier.Name);
+            //    } else {
+            //        Console.WriteLine("Occupier is null");
+            //    }
+            //}
+        }
+
+        public void Fire(Point _target, Grid OpponentGrid)
+        {
+            Console.WriteLine(OpponentGrid.GridLocations[_target.Location]);
+            //for (int i = 0; i < _target.Occupier.Coords.Length; i++)
+            //{
+            //    PlayerGrid.GridLocations[_coords[i].Location].Occupier = Fleet[_shipName];
+            //    //Console.WriteLine(Fleet[_shipName].Coords[i]);
+            //}
+
+
+            //Console.WriteLine($"{0}", _target.Location);
+            //if (_target.Occupier == null)
+            //{
+            //    Console.WriteLine("Miss");
+            //} else {
+                //if (_target.Occupier != null)
+                //{
+                //    Console.WriteLine($"Target: {_target.Occupier.Name}", _target.Occupier.Name);
+                //}
+     //             for (int k = 0; k < kvp.Value.Coords.Length; k++)
+     //             {           
+					//Console.WriteLine(kvp.Value.Name);
+        //          //}
+        //        Console.WriteLine("Check for hit");
+        //    }
         }
     }
 }
