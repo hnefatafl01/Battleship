@@ -56,29 +56,18 @@ namespace Battleship
 
         public void Fire(Point _target, Grid OpponentGrid)
         {
-            Console.WriteLine(OpponentGrid.GridLocations[_target.Location]);
-            //for (int i = 0; i < _target.Occupier.Coords.Length; i++)
-            //{
-            //    PlayerGrid.GridLocations[_coords[i].Location].Occupier = Fleet[_shipName];
-            //    //Console.WriteLine(Fleet[_shipName].Coords[i]);
-            //}
+            if (OpponentGrid.GridLocations[_target.Location].Occupier == null)
+            {
+                Console.WriteLine("Miss!");
+            } else {
+				OpponentGrid.GridLocations[_target.Location].Occupier.Hits++;
+				Console.WriteLine($"Hit! {OpponentGrid.GridLocations[_target.Location].Occupier.Hits}");
+                if (OpponentGrid.GridLocations[_target.Location].Occupier.Hits >= OpponentGrid.GridLocations[_target.Location].Occupier.Coords.Length) {
+                    OpponentGrid.GridLocations[_target.Location].Occupier.Sunk = true;
+                    Console.WriteLine($"Sunk! {OpponentGrid.GridLocations[_target.Location].Occupier.Name}");
+                }
+            }
 
-
-            //Console.WriteLine($"{0}", _target.Location);
-            //if (_target.Occupier == null)
-            //{
-            //    Console.WriteLine("Miss");
-            //} else {
-                //if (_target.Occupier != null)
-                //{
-                //    Console.WriteLine($"Target: {_target.Occupier.Name}", _target.Occupier.Name);
-                //}
-     //             for (int k = 0; k < kvp.Value.Coords.Length; k++)
-     //             {           
-					//Console.WriteLine(kvp.Value.Name);
-        //          //}
-        //        Console.WriteLine("Check for hit");
-        //    }
         }
     }
 }

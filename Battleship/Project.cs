@@ -44,6 +44,7 @@ namespace Battleship
             });
 
             p2.Fire(new Point("a1"), p1.PlayerGrid);
+            p2.Fire(new Point("a2"), p1.PlayerGrid);
 
             //Console.Write(p1.Fleet);
             //        Ship value;

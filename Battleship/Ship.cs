@@ -6,14 +6,16 @@ namespace Battleship
         //private int Hits { get; set; } = 0;
         //private Boolean Sunk { get; set; } = false;
         int _size;
-        public int Hits { get; set; } = 0;
-        public Boolean Sunk { get; set; } = false;
+        public int Hits { get; set; }
+        public Boolean Sunk { get; set; }
         public String Name { get; set; }
         public Point[] Coords;
 
         public Ship(String _name, int size) {
             Name = _name;
             _size = size;
+            Hits = 0;
+            Sunk = false;
             Coords = new Point[size];
         }
     }
